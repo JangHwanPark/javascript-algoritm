@@ -29,6 +29,12 @@ function interpretSolutionFn(command) {
     return command.replaceAll('()', 'o').replaceAll('(al)', 'al');
 }
 
+function interpretSolutionFn2(command) {
+    command = command.replaceAll('(al)', 'al');
+    command = command.replaceAll('()', 'o');
+    return command;
+}
+
 let command = "G()(al)";
 let command2 = "G()()()()(al)";
 let command3 = "(al)G(al)()()G";
