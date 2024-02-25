@@ -2,8 +2,36 @@ function finalPrices(prices) {
     let answer = [];
 
     for (let i = 0; i < prices.length; i++) {
-        
+        for (let j = i + 1; j < prices.length; j++) {
+            if (prices[j] <= prices[i]) {
+                prices[i] = prices[i] - prices[j];
+                break;
+            }
+        }
+        answer.push(prices[i]);
     }
+
+    return answer;
+}
+
+function solutionFinalPrices(prices) {
+    let pricesLen = prices.length;
+    let answer = [];
+
+    for (let i = 0; i < pricesLen; i++) {
+        let newValue = prices[i];
+
+        for (let j = i + 1; j < pricesLen; j++) {
+            if (prices[j] <= prices[i]) {
+                newValue = prices[i] - prices[j];
+                break;
+            }
+        }
+
+        answer.push(newValue);
+    }
+
+    return answer;
 }
 
 /*
