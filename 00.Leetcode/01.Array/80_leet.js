@@ -2,21 +2,16 @@
  * @param {number[]} nums
  * @return {number}
  */
+// 길이 + 2
 const removeDuplicates = function(nums) {
-    const count = {};
-    nums.forEach(num => {
-        count[num] = (count[num] || 0) + 1;
-    });
-
-    for (let i = 0; i < nums.length; i++) {
-        if (count[nums[i]] > 2) {
-            nums.splice(i, 1);
-            i--;
-            count[nums[i]]--;
+    let i = 0;
+    for (let j = 0; j < nums.length; j++) {
+        if (nums[j] !== nums[j + 2]) {
+            nums[i] = nums[j];
+            i++;
         }
     }
-
-    return nums.length;
+    return i;
 };
 
 let nums = [1,1,1,2,2,3];

@@ -9,3 +9,15 @@ flowchart TD
     case1 -- No --> result2
     result2 --> case1
 ```
+
+## 다른 설계
+```mermaid
+flowchart TD
+    variable1("ptr1 선언")
+    variable3("카운트 변수")
+    loop1["0번째 인덱스(왼쪽)부터 루프 실행<br>"]
+    loop2["ptr1 + 1부터 부터 루프 실행"]
+    case1{"같은 요소가 2번 나오는가 ?"}
+    result1["요소를 제거한다."]
+    result1["arr, len 반환"]
+```
